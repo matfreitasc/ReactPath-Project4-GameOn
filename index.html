@@ -64,49 +64,53 @@
             >
               <div
                 class="formData">
-                <label>First Name</label><br>
+                <label>First Name</label>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                />
+                <p id="error-message1" style="display:none"></p>
               </div>
               <div
                 class="formData">
-                <label>Last Name</label><br>
+                <label>Last Name</label>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                />
+                <p id="error-message2" style="display:none"></p>
               </div>
               <div
                 class="formData">
-                <label>Email</label><br>
+                <label>Email</label>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                />
+                <p id="error-message3" style="display:none"></p>
               </div>
               <div
                 class="formData">
-                <label>Birthdate</label><br>
+                <label>Birthdate</label>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                />
               </div>
               <div
                 class="formData">
-                <label>How many tournaments have you attended? </label><br>
+                <label>How many tournaments have you attended? </label>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <p id="error-message4" style="display:none"></p>
               </div>
               <p class="text-label">Where do you want to participate this year?</p>
               <div
@@ -118,8 +122,8 @@
                   name="location"
                   value="New York"
                 />
-                <label class="checkbox-label" for="location1">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location1">
+                  <span class="checkbox-icon error"></span>
                   New York</label
                 >
                 <input
@@ -129,8 +133,8 @@
                   name="location"
                   value="San Francisco"
                 />
-                <label class="checkbox-label" for="location2">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location2">
+                  <span class="checkbox-icon error"></span>
                   San Francisco</label
                 >
                 <input
@@ -140,8 +144,8 @@
                   name="location"
                   value="Seattle"
                 />
-                <label class="checkbox-label" for="location3">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location3">
+                  <span class="checkbox-icon error"></span>
                   Seattle</label
                 >
                 <input
@@ -151,8 +155,8 @@
                   name="location"
                   value="Chicago"
                 />
-                <label class="checkbox-label" for="location4">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location4">
+                  <span class="checkbox-icon error"></span>
                   Chicago</label
                 >
                 <input
@@ -162,8 +166,8 @@
                   name="location"
                   value="Boston"
                 />
-                <label class="checkbox-label" for="location5">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location5">
+                  <span class="checkbox-icon error"></span>
                   Boston</label
                 >
                 <input
@@ -173,10 +177,11 @@
                   name="location"
                   value="Portland"
                 />
-                <label class="checkbox-label" for="location6">
-                  <span class="checkbox-icon"></span>
+                <label class="checkbox-label error" for="location6">
+                  <span class="checkbox-icon error"></span>
                   Portland</label
                 >
+                <p id="error-message5" style="display:none"></p>
               </div>
 
               <div
@@ -185,7 +190,7 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
+                  
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>

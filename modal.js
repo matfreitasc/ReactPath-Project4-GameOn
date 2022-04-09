@@ -43,10 +43,11 @@ function firstName() {
     firstName.value.length < 2
   ) {
     formData[0].setAttribute('data-error-visible', 'true');
+    addError(1, 'First Name is required', 'block');
     return false;
   } else {
     formData[0].setAttribute('data-error-visible', 'false');
-
+    addError(1, '', 'none');
     return true;
   }
 }
@@ -62,9 +63,11 @@ function lastName() {
     lastName.value.length < 2
   ) {
     formData[1].setAttribute('data-error-visible', 'true');
+    addError(2, 'Last Name is required', 'block');
     return false;
   } else {
     formData[1].setAttribute('data-error-visible', 'false');
+    addError(2, '', 'none');
     return true;
   }
 }
@@ -76,11 +79,14 @@ document.forms['reserve']['last'].addEventListener('keyup', lastName);
 function validateEmail() {
   let email = document.forms['reserve']['email'];
   let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   if (emailRegex.test(email.value)) {
     formData[2].setAttribute('data-error-visible', 'false');
+    addError(3, '', 'none');
     return true;
   } else {
     formData[2].setAttribute('data-error-visible', 'true');
+    addError(3, 'A valid email is required', 'block');
     return false;
   }
 }
@@ -106,6 +112,7 @@ function validateTournament() {
   let tournament = document.forms['reserve']['quantity'];
   if (tournament.value == '' || tournament.value == null) {
     formData[4].setAttribute('data-error-visible', 'true');
+    addError(4, "Please don't leave empty", 'block');
     return false;
   } else {
     formData[4].setAttribute('data-error-visible', 'false');
@@ -124,6 +131,7 @@ document.forms['reserve']['quantity'].addEventListener(
 // Validate Location Selection
 function validateLocation() {
   let location = document.forms['reserve']['location'];
+  let locationError = document.querySelector('.error');
   if (
     location[0].checked == false &&
     location[1].checked == false &&
@@ -131,10 +139,12 @@ function validateLocation() {
     location[3].checked == false &&
     location[4].checked == false
   ) {
-    formData[5].setAttribute('data-error-visible', 'true');
+    locationError.style.border = '2px solid red';
+    addError(5, 'Please select a location', 'block');
     return false;
   } else {
-    formData[5].setAttribute('data-error-visible', 'false');
+    locationError.style.border = '2px solid #279e7a';
+    addError(5, '', 'none');
     return true;
   }
 }
@@ -179,3 +189,15 @@ form.addEventListener('submit', (e) => {
     modalSubmitted.style.display = 'block';
   }
 });
+
+function addError(errorNumber, errorMessage, display) {
+  let p = document.querySelector('#error-message' + `${errorNumber}`);
+  p.style.display = `${display}`;
+  p.style.fontSize = '10px';
+  p.style.fontFamily = 'Roboto';
+  p.style.fontWeight = 'Regular';
+  p.style.color = 'red';
+  document.querySelector(
+    '#error-message' + `${errorNumber}`
+  ).innerHTML = `${errorMessage}`;
+}
