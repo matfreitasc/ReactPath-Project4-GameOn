@@ -2,4 +2,4 @@
 # GameOn website
 
 
-[Link](https://matfreitasc.github.io/ReactPath-Project4-GameOn/) for the project
+> [Link](https://matfreitasc.github.io/ReactPath-Project4-GameOn/) for the project
