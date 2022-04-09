@@ -26,10 +26,11 @@ function closeModal() {
   modalbg.style.display = 'none';
   modalSubmitted.style.display = 'none';
 }
-const close = document.querySelector('.close-x');
-close.addEventListener('click', closeModal);
+
 const closeBtn = document.querySelector('.close');
 closeBtn.addEventListener('click', closeModal);
+document.querySelector('.close-modal').addEventListener('click', closeModal);
+document.querySelector('.close-x').addEventListener('click', closeModal);
 
 // Form Validation
 
