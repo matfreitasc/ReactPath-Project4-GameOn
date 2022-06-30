@@ -1,4 +1,4 @@
-# Project number 4 for of the React Path
+# Project number 4 of the React Path
 
 *GameOn website*
 
